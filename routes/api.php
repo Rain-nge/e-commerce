@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\CartItemController;
+use App\Http\Controllers\Api\ProductCategoryController;
+use App\Http\Controllers\Api\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::middleware('auth:sanctum')->get('/user',
-function (Request $request) {
-		return $request->user();
-	});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::apiResources([
+		'categories' => ProductCategoryController::
+
+class ,
+		'products'   => ProductController::class ,
+		'cart-items' => CartItemController::class ,
+	]);
